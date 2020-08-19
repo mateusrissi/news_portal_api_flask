@@ -1,2 +1,3 @@
 FLASK_APP=news_portal.py
+FLASK_RUN_PORT=8000
 FLASK_DEBUG=1
