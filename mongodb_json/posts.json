@@ -1,0 +1,29 @@
+[
+  {
+    "_id": {
+      "$oid": "5f3bda7fd47d9a46b6ad0c6d"
+    },
+    "title": "Coronavirus: New York warns of major medical shortages in 10 days",
+    "content": "asdadssdfgjnodfgm kodfgo dfjg dfjgp dfjgpdf jgkdfglpm, dfgm,dflpkgmdfklg pdfkgopfkgpkdfpkg pdfp pkp dfkgop dkgpofk dpk",
+    "authors": ["5f3bd90dd47d9a46b6ad0c6a", "5f3bd90dd47d9a46b6ad0c6b"],
+    "created_on": "Tue Aug 18 2020 10:41:19 GMT-0300 (Hora oficial do Brasil)"
+  },
+  {
+    "_id": {
+      "$oid": "5f3f34875703bf86327ff6af"
+    },
+    "title": "Tokyo 2020: IOC sets deadline for decision on Games amid coronavirus",
+    "content": "kkkkkkk",
+    "authors": ["5f3bd90dd47d9a46b6ad0c6a"],
+    "created_on": "Tue Aug 18 2020 10:43:23 GMT-0300 (Hora oficial do Brasil)"
+  },
+  {
+    "_id": {
+      "$oid": "5f3f34a2b4c4a0367b8d99ec"
+    },
+    "title": "How Nigeria's kings lost their power",
+    "content": "asd12321asd",
+    "authors": ["5f3bd90dd47d9a46b6ad0c6b"],
+    "created_on": "Tue Aug 20 2020 09:45:47 GMT-0300 (Hora oficial do Brasil)"
+  }
+]

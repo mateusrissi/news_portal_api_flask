@@ -1,0 +1,28 @@
+[
+  {
+    "_id": {
+      "$oid": "5f3bd90dd47d9a46b6ad0c6a"
+    },
+    "name": "Mateus Rissi",
+    "email": "mtrissi@gmail.com",
+    "posts": ["5f3bda7fd47d9a46b6ad0c6d", "5f3f34875703bf86327ff6af"]
+  },
+
+  {
+    "_id": {
+      "$oid": "5f3bd90dd47d9a46b6ad0c6b"
+    },
+    "name": "José Silva",
+    "email": "jose_silva@gmail.com",
+    "posts": ["5f3bda7fd47d9a46b6ad0c6d", "5f3f34a2b4c4a0367b8d99ec"]
+  },
+
+  {
+    "_id": {
+      "$oid": "5f3bd90dd47d9a46b6ad0c6c"
+    },
+    "name": "Maria da Rosa",
+    "email": "maria_rosa@gmail.com",
+    "posts": ""
+  }
+]
