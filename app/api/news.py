@@ -3,9 +3,8 @@ from flask import request
 from app import app
 from flask_pymongo import PyMongo
 from bson.json_util import dumps
+from bson.objectid import ObjectId
 from datetime import datetime
-
-# datetime.datetime.utcnow()
 
 
 app.config["MONGO_URI"] = "mongodb://localhost:27017/news_portal_db"
@@ -24,6 +23,7 @@ def search_news():
     posts = mongo.db.posts.find(
         {
             "$or": [
+                {"_id": ObjectId(search)},
                 {"title": {"$regex": search, "$options": "i"}},
                 {"content": {"$regex": search, "$options": "i"}},
                 {"authors": {"$regex": search, "$options": "i"}},
@@ -36,14 +36,38 @@ def search_news():
 
 @bp.route("/news", methods=["POST"])
 def create_news():
-    pass
+    request_body = request.json
+    if (
+        ("title" in request_body)
+        and ("content" in request_body)
+        and ("authors" in request_body)
+    ):
+        if (
+            (request_body["title"] != "")
+            and (request_body["content"] != "")
+            and (request_body["authors"] != "")
+        ):
+            request_body["created_on"] = datetime.utcnow()
+            status = mongo.db.posts.insert_one(request_body)
+            return str(status.inserted_id)
+        else:
+            return "These fields cannot be empty: title, content and authors"
+    else:
+        return "These fields are required: title, content and authors"
 
 
-@bp.route("/news/<int:id>", methods=["PATCH"])
-def update_news(id):
-    pass
+@bp.route("/news", methods=["PATCH"])
+def update_news():
+    request_body = request.json
+    document_to_update = request.args.get("document_to_update")
+    status = mongo.db.posts.update({"_id": ObjectId(document_to_update)}, request_body)
+
+    return status
 
 
 @bp.route("/news", methods=["DELETE"])
 def remove_news():
-    pass
+    document_to_remove = request.args.get("document_to_remove")
+    status = mongo.db.posts.remove({"_id": ObjectId(document_to_remove)})
+
+    return status
